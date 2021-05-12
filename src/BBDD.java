@@ -28,6 +28,7 @@ public class BBDD {
         
         //System.out.println(vAlumnos);
         
+        /*
         String nombre = "juanfran";
         String direccion = "calle3";
         int edad = 54;
@@ -35,6 +36,7 @@ public class BBDD {
         Alumno a = new Alumno(nombre, edad, direccion);
         
         IODatos.insertarAlumno(a);
+        */
        
     }
     

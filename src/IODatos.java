@@ -141,4 +141,21 @@ public class IODatos {
         
     }
     
+    public static void modificarNombreAlumno(String nombre){
+           
+         try (Connection con = DriverManager.getConnection(RUTA, USU, PASS)){
+             
+             String sentencia = "Update alumno set nombre = ? where nombre = ?;";
+             
+             PreparedStatement pt = con.prepareStatement(sentencia);
+             pt.setString(1, nombre);
+             pt.setString(2, "Magallon");
+             
+             pt.executeUpdate();
+             
+         } catch (SQLException ex) {
+            Logger.getLogger(IODatos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
 }
