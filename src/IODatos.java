@@ -113,4 +113,32 @@ public class IODatos {
         return vAlumnos;
     }
     
+    public static void insertarAlumno(Alumno a){
+        
+         try (Connection con = DriverManager.getConnection(RUTA, USU, PASS)){
+            
+            System.out.println("Conexion realizada");
+            
+            //String sentencia = "INSERT INTO ALUMNO VALUES('" + a.getNombre() + "'," + a.getEdad() + ",'" + a.getDireccion() + "')";
+            String sentencia1 = "INSERT INTO ALUMNO VALUES(?,?,?)";
+            
+            Statement st = con.createStatement();
+            PreparedStatement ps = con.prepareStatement(sentencia1);
+            
+            //st.executeUpdate(sentencia1);
+            ps.setString(1, a.getNombre());
+            ps.setInt(2, a.getEdad());
+            ps.setString(3, a.getDireccion());
+            
+            ps.executeUpdate();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(IODatos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        System.out.println("Conexion cerrada");
+        
+        
+    }
+    
 }

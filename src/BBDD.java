@@ -24,9 +24,17 @@ public class BBDD {
         
         //IODatos.insertarColumna("direccion");
         
-        ArrayList<Alumno> vAlumnos = IODatos.cargarDatosAlumno();
+        //ArrayList<Alumno> vAlumnos = IODatos.cargarDatosAlumno();
         
-        System.out.println(vAlumnos);
+        //System.out.println(vAlumnos);
+        
+        String nombre = "juanfran";
+        String direccion = "calle3";
+        int edad = 54;
+        
+        Alumno a = new Alumno(nombre, edad, direccion);
+        
+        IODatos.insertarAlumno(a);
        
     }
     
