@@ -37,6 +37,10 @@ public class BBDD {
         
         IODatos.insertarAlumno(a);
         */
+        
+        //IODatos.guardarAlumno();
+        
+        IODatos.cargarAlumno();
        
     }
     
